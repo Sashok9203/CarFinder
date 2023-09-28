@@ -38,23 +38,23 @@ namespace CarFinder.ViewModels
 
                 CarInfo info = JsonSerializer.Deserialize<CarInfo>(content) ?? new();
 
-                Elements[2].Value = info.vendor;
-                Elements[6].Value = info.region.name_ua;
-                Elements[0].Value = info.digits;
-                Elements[1].Value = info.vin;
-                Elements[11].Value = info.operations[^1].is_registered_to_company ? "Tak" : "Hi";
-                Elements[9].Value = info.operations[^1].color.ua;
-                Elements[3].Value = info.model;
-                Elements[4].Value = info.model_year.ToString();
-                Elements[8].Value = info.region.new_code;
-                Elements[7].Value = info.region.old_code;
-                Elements[10].Value = info.is_stolen ? "Tak" : "Hi";
-                Elements[5].Value = info.operations[^1].kind.ua;
-                Elements[12].Value = info.operations[^1].address;
-                Elements[13].Value = info.operations[^1].department;
-                Elements[14].Value = info.operations[^1].registered_at;
-                Elements[15].Value = info.operations[^1].operation.ua;
-                Elements[16].Value = info.operations[^1].operation_group.ua;
+                Elements["Виробник"].Value = info.vendor;
+                Elements["Область"].Value = info.region.name_ua;
+                Elements["Номер"].Value = info.digits;
+                Elements["VIN"].Value = info.vin ?? "VIN доступний для авто з регістрацією після 2021";
+                Elements["Зареестрована на компанію"].Value = info.operations[^1].is_registered_to_company ? "Tak" : "Hi";
+                Elements["Колір"].Value = info.operations[^1].color.ua;
+                Elements["Модель"].Value = info.model;
+                Elements["Рік моделі"].Value = info.model_year.ToString();
+                Elements["Новий код"].Value = info.region.new_code;
+                Elements["Старий код"].Value = info.region.old_code;
+                Elements["Викрадена"].Value = info.is_stolen ? "Tak" : "Hi";
+                Elements["Тип"].Value = info.operations[^1].kind.ua;
+                Elements["Адрес"].Value = info.operations[^1].address;
+                Elements["Відділ"].Value = info.operations[^1].department;
+                Elements["Реєстрація"].Value = info.operations[^1].registered_at;
+                Elements["Остання операція"].Value = info.operations[^1].operation.ua;
+                Elements["Група операції"].Value = info.operations[^1].operation_group.ua;
                 PhotoUrl = info.photo_url;
                 RequestCount = response.Headers.FirstOrDefault(x => x.Key == "X-RateLimit-Remaining").Value.ElementAt(0);
                 carComments = info.comments;
@@ -85,7 +85,7 @@ namespace CarFinder.ViewModels
 
         public IEnumerable<Comment>? CarComments => carComments;
 
-        public List<InfoViewElement> Elements { get; set; }
+        public Dictionary<string,InfoViewElement> Elements { get; set; }
 
         public bool IsVIN { get; set; }
 
@@ -95,23 +95,23 @@ namespace CarFinder.ViewModels
         {
             Elements = new()
             {
-                new(){Title = "Номер", Value ="" },
-                new(){Title = "VIN", Value ="" },
-                new(){Title = "Виробник", Value ="" },
-                new(){Title = "Модель", Value ="" },
-                new(){Title = "Рік моделі", Value ="" },
-                new(){Title = "Тип", Value ="" },
-                new(){Title = "Область", Value ="" },
-                new(){Title = "Старий код", Value ="" },
-                new(){Title = "Новий код", Value ="" },
-                new(){Title = "Колір", Value ="" },
-                new(){Title = "Викрадена", Value ="" },
-                new(){Title = "Зареестрована на компанію", Value ="" },
-                new(){Title = "Адрес", Value ="" },
-                new(){Title = "Відділ", Value ="" },
-                new(){Title = "Реєстрація", Value ="" },
-                new(){Title = "Остання операція", Value ="" },
-                new(){Title = "Група операції", Value ="" },
+                { "Номер", new() },
+                { "VIN", new() },
+                { "Виробник", new() },
+                { "Модель", new() },
+                { "Рік моделі", new() },
+                { "Колір", new() },
+                { "Тип", new() },
+                { "Область", new() },
+                { "Старий код", new() },
+                { "Новий код", new() },
+                { "Викрадена", new() },
+                { "Зареестрована на компанію", new() },
+                { "Адрес", new() },
+                { "Відділ", new() },
+                { "Реєстрація", new() },
+                { "Остання операція", new() },
+                { "Група операції", new() },
             };
             
         }

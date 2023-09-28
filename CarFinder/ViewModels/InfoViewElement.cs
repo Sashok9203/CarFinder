@@ -11,7 +11,6 @@ namespace CarFinder.ViewModels
     internal class InfoViewElement : INotifyPropertyChanged
     {
         private string value = string.Empty;
-        public string Title { get; set; } = string.Empty;
         public string  Value
         {
             get => value;
