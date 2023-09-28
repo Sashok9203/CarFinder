@@ -4,10 +4,61 @@
              xmlns:local="clr-namespace:CarFinder"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        
         <LinearGradientBrush  x:Key="windowsBackground" EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FF6A70BD" Offset="0.514"/>
             <GradientStop Color="#FF484C80" Offset="0.851"/>
             <GradientStop Color="#FF484C80" Offset="0.183"/>
         </LinearGradientBrush>
+
+        <Style TargetType="RadioButton">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="titleText">
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Margin" Value="20,0,0,2"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="commentText">
+            <Setter Property="Margin" Value="0,0,5,0"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="textStyle">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+        </Style>
+
+        <Style TargetType="Border" x:Key="elementBorder">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="CornerRadius" Value="2"/>
+            <Setter Property="Background" Value="LightSteelBlue"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+
+        <Style TargetType="Border" x:Key="mainBorder">
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="LightGray"/>
+            <Setter Property="Background" Value="{StaticResource windowsBackground}"/>
+        </Style>
+
+        <Style TargetType="ScrollViewer">
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+        </Style>
+
     </Application.Resources>
 </Application>

@@ -14,58 +14,7 @@
     </Window.DataContext>
 
     <Window.Resources>
-         
-        <Style TargetType="RadioButton">
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="0,10,0,0"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="FontWeight" Value="Medium"/>
-        </Style>
-        
-        <Style TargetType="TextBlock" x:Key="titleText">
-            <Setter Property="VerticalAlignment" Value="Bottom"/>
-            <Setter Property="Margin" Value="20,0,0,2"/>
-            <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Foreground" Value="White"/>
-        </Style>
-
-        <Style TargetType="TextBlock" x:Key="commentText">
-            <Setter Property="Margin" Value="0,0,5,0"/>
-            <Setter Property="Foreground" Value="White"/>
-        </Style>
-
-        <Style TargetType="TextBlock" x:Key="textStyle">
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="Margin" Value="10,0,0,0"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontWeight" Value="Medium"/>
-        </Style>
-        
-        <Style TargetType="Border" x:Key="elementBorder">
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="CornerRadius" Value="2"/>
-            <Setter Property="Background" Value="LightSteelBlue"/>
-            <Setter Property="Height" Value="30"/>
-        </Style>
-
-        <Style TargetType="Border" x:Key="mainBorder">
-            <Setter Property="CornerRadius" Value="4"/>
-            <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="BorderBrush" Value="LightGray"/>
-            <Setter Property="Background" Value="{StaticResource windowsBackground}"/>
-        </Style>
-
-        <Style TargetType="ScrollViewer">
-            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
-            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
-        </Style>
-        
-        <vms:UrlImageLoader x:Key="imgLoader" />
-        
+         <vms:UrlImageLoader x:Key="imgLoader" />
     </Window.Resources>
         
     <Grid>
